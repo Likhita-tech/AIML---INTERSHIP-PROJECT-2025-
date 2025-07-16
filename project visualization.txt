@@ -1,0 +1,64 @@
+import seaborn as sns
+# Load the diamonds dataset
+df = sns.load_dataset("diamonds")
+#To print the top 5 elements in the dataset (or) dict
+print(df.head())
+
+import matplotlib.pyplot as plt
+# Create a scatter plot: carat vs price
+sns.scatterplot(x="carat", y="price", data=df)
+# Add a title
+plt.title("Carat vs Price of Diamonds")
+# Show the plot
+plt.show()
+
+# Create a scatter plot: carat vs price
+sns.scatterplot(x="depth", y="table", data=df)
+# Add a title
+plt.title("Depth vs Table of Diamonds")
+# Show the plot
+plt.show()
+
+#To construct a lineplot for carat and price
+sns.lineplot(x="carat", y="price", data=df)
+#To add title to the lineplot
+plt.title("Carat vs Price")
+#To add name to the X-label
+plt.xlabel("Carat")
+#To add name to the Y-label
+plt.ylabel("Price")
+#To print the lineplot
+plt.show()
+
+sns.boxplot(x="carat", y="price", data=df)
+#To add title to the lineplot
+plt.title("Carat vs Price")
+#To add name to the X-label
+plt.xlabel("Carat")
+#To add name to the Y-label
+plt.ylabel("Price")
+#To print the lineplot
+plt.show()
+
+sns.barplot(x="carat", y="price", data=df)
+#To add title to the lineplot
+plt.title("Carat vs Price")
+#To add name to the X-label
+plt.xlabel("Carat")
+#To add name to the Y-label
+plt.ylabel("Price")
+#To print the lineplot
+plt.show()
+
+import seaborn as sns
+import matplotlib.pyplot as plt
+# Load diamonds dataset
+df = sns.load_dataset("diamonds")
+# Create a relational plot using lineplot
+s1=sns.relplot(x="carat", y="price", data=df , kind='line')
+# Create a relational plot
+s2=sns.relplot(x="carat", y="price", data=df)
+# Add title
+plt.title("Carat vs Price - Relational Plot")
+plt.show(s1)
+plt.show(s2)
